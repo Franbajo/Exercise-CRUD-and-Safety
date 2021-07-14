@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<header th:replace="plantilla/template :: header"></header>
+	<div class="container mt-4">
+		<div class="col-sm-6">
+			<form th:action="@{/saveAlumno}" th:object=${alumno} method="POST">
+				<div class="card">
+								<div class="card-header">
+									<center><h3>Módulo Alumno</h3></center>
+								</div>
+								<div class="card-body">
+									<!--<label>ID</label>-->
+									<input th:field="*{id}" type="hidden" class="form-control">
+								</div>
+								<div class="form-group">
+									<label>Nombre</label>
+									 <input th:field="*{nombre}" type="text" class="form-control">
+									 <div class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">Comment text Error</div> 
+								</div>
+								<div class="form-group">
+									<label>Apellidos</label>
+									 <input th:field="*{apellido}" type="text" class="form-control">
+									 <div class="form-text text-danger" th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}">Comment text Error</div> 
+								</div>
+								<div class="form-group">
+									<label>Observaciones</label>
+									 <input th:field="*{observacion}" type="text" class="form-control">
+									 <div class="form-text text-danger" th:if="${#fields.hasErrors('observacion')}" th:errors="*{observacion}">Comment text Error</div> 
+								</div>
+								<div class="form-group">
+									<label>Nota</label>
+									 <input th:field="*{nota}" type="text" class="form-control">
+									 <div class="form-text text-danger" th:if="${#fields.hasErrors('nota')}" th:errors="*{nota}">Comment text Error</div> 
+								</div>
+								<div class="form-group">
+									<label>Dni</label>
+									 <input th:field="*{dni}" type="text" class="form-control">
+									 <div class="form-text text-danger" th:if="${#fields.hasErrors('dni')}" th:errors="*{dni}">Comment text Error</div> 
+								</div>
+								<div class="form-group">
+									<label>Fecha de nacimiento</label>
+									 <input th:field="*{fechanacimiento}" type="text" class="form-control">
+									 <div class="form-text text-danger" th:if="${#fields.hasErrors('fechanacimiento')}" th:errors="*{fechanacimiento}">Comment text Error</div> 
+								</div>
+				</div>
+						<div class="card-footer">
+								<input type="submit" value="Guardar" class="btn btn-success">
+						</div>
+				</div>			
+			</form>
+		</div>
+	</div>
+	            <div class="contenedor">
+                <div class="llamada-texto">
+                             <article>
+                			</article>
+                </div>
+            </div>
+	
+	
+<footer th:replace="plantilla/template :: footer">
+		
+</footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<header th:replace="plantilla/template :: header"></header>
+	<div class="container mt-4">
+		<div class="col-sm-6">
+			<form class="wow bounceInRight" data-wow-duration="3s" data-wow-delay="0s"  th:action="@{/saveClientes}" th:object=${clientes} method="POST">
+				<div class="card">
+					<div class="card-header">
+						<center><h3>Módulo Cliente</h3></center>
+								</div>
+								<div class="card-body">
+									<!--<label>ID</label>-->
+									<input th:field="*{id}" type="hidden" class="form-control">
+								</div>
+								<div class="form-group">
+									<label>Nombre</label>
+									 <input th:field="*{nombre}" type="text" class="form-control">
+									 <div class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">Comment text Error</div> 
+								</div>
+									<div class="form-group"> <label>Dni</label> <input
+									th:field="*{dni}" type="text" class="form-control">
+									<div class="form-text text-danger" th:if="${#fields.hasErrors('dni')}" th:errors="*{dni}">Comment text Error</div> 
+								</div>
+								<div class="form-group"> <label>Ciudad</label> <input
+									th:field="*{ciudad}" type="text" class="form-control">
+									<div class="form-text text-danger" th:if="${#fields.hasErrors('ciudad')}" th:errors="*{ciudad}">Comment text Error</div> 
+								</div>
+								</div>
+						<div class="card-footer">
+								<input type="submit" value="Guardar" class="btn btn-success">
+						</div>
+				</div>			
+			</form>
+		</div>
+	</div>
+	
+	            <div class="contenedor">
+                <div class="llamada-texto">
+                             <article>
+                			</article>
+                </div>
+            </div>
+<footer th:replace="plantilla/template :: footer">
+		
+</footer>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<header th:replace="plantilla/template :: header"></header>
+
+ <div class="container">
+ 
+  <h2>Hi <span th:utext="${username}"></span>, this is the home page.</h2>
+  <a th:href="@{/newUser}">Sign out</a>
+
+ </div>
+ 
+<footer th:replace="plantilla/template :: footer"></footer>
+</body>
+</html>

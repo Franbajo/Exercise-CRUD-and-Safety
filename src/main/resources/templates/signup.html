@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<header th:replace="plantilla/template :: header"></header>
+ <div class="container">
+     <form th:action="@{/saveSignup}" th:object=${user} method="POST" ><!-- -->
+      <div class="row">
+             <div class="col-md-3"></div>
+             <div class="col-md-6">
+              <div class="alert alert-success" role="alert" th:if="${msg}" th:utext="${msg}">
+     </div>
+             </div>
+         </div>
+         <div class="row">
+             <div class="col-md-3"></div>
+             <div class="col-md-6">
+                 <center><h2>Nuevo Usuario</h2> </center>
+                 <hr>
+             </div>
+         </div>
+         		<div class="card-body">
+									<!--<label>ID</label>-->
+									<input th:field="*{id}" type="hidden" class="form-control">
+								</div>
+         <div class="form-group">
+				<label>Nombre</label>
+				 <input th:field="*{username}" type="text" class="form-control">
+				<div class="form-text text-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Comment text Error</div> 
+		</div>
+	  <div class="form-group">
+				<label>Email</label>
+				 <input th:field="*{email}" type="text" class="form-control">
+				<div class="form-text text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Comment text Error</div> 
+		</div>
+		<div class="form-group">
+				<label>Password</label>
+				 <input th:field="*{password}" type="text" class="form-control">
+				<div class="form-text text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Comment text Error</div> 
+		</div>
+		
+		
+		<div class="form-group">
+				<label>Enabled</label>
+				 <input th:field="*{enabled}" type="text" class="form-control">
+				<div class="form-text text-danger" th:if="${#fields.hasErrors('enabled')}" th:errors="*{enabled}">Comment text Error</div> 
+		</div>
+							
+								 <button class="btn btn-lg btn-primary btn-block" th:href="@{/registrocompletado}">Register</a></button>
+				
+     </form>
+     
+     
+
+ </div>
+
+
+<footer th:replace="plantilla/template :: footer"></footer>
+</body>
+</html>

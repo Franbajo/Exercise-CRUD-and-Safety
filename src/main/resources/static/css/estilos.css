@@ -1,0 +1,79 @@
+@charset "ISO-8859-1";
+.contendor-titulo {
+height: 100vh; /*definimos el alto para poder centrar el titulo
+                verticalmente*/
+display: flex; /*NI PUTA IDEA POR AHORA DE PARA QUÉ NARICES
+                SIRVE ESTA LÍNEA... Por lo que se ve
+                sirve para el align-items que ponemos 
+                abajo, sino sería más dificil ponerlo. */  
+justify-content: center; /*Se supone que sirve para centrar
+                         el diplay:flex justo de arriba*/
+align-items: center; /*La idea aquí es centrarlo verticalmente*/
+}
+.contendor-titulo h1 {
+font-size: 48px; /*La idea aquí es cambiar el tamaño de la fuente*/
+color: #ffffff;
+border: 10px outset white; /*Aquí le metemos un recuadro blanco al h1*/
+padding: 70px 50px;
+font-family:"Poppins"!important;
+}
+
+.contenedor {
+width: 80%; 
+height: 100%;
+margin:0 auto ;
+}
+
+body {
+    background-color:#ffffff;
+}
+
+.header2 {
+    background-image: linear-gradient(rgb(0,0,0,.6),
+    rgb(0,0,0,.2), rgb(0,0,0,.6)),/*Esto es para meter un gradiente 
+                                       de sombreado super pro... Es importante
+                                       poner mínimo 2 rgb, pq sino no funciona
+                                       el degradado... Por otro lado, dentro
+                                       del rgb, ponemos al final .X para
+                                       añadir opacidad o transparencia...
+                                       Por último tras poner nuestro degradado
+                                       si queremos añadir por ejemplo una 
+                                       imagen de fondo como la que sale en este
+                                       ejemplo, pondremos tras cerrar paréntesis
+                                       un coma,  y a continuación metemos la url*/
+    url('../images/llamada.jpg'); /*Esta es la url para poner la imagen de fondo*/
+    width: 100%;
+    height: 90vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+   }
+/*----------Llamada-----------*/
+
+
+button:hover{
+    transform: scale(1.1); /**PARA QUE LA TRANSICION NO SE VEA DE GOLPE SE
+                            PONE EL TRANSITION EN EL BUTTOM... EL TRANSITION
+                            SE PONE FUERA DEL HOVER PARA QUE HAGA LA ANIMACION
+                            DE ENTRADA Y SALIDA... SINO SOLO HACE LA DE
+                            ENTRADA*/
+   
+} 
+
+article {
+padding-top: 50px; /*La idea es que se vea un poquito separado el 
+                     texto del header*/
+
+text-align: center;
+border-bottom: 5px dotted grey; /*La idea es meterle un borde*/
+margin-bottom: 20px;/*Le metemos este margen, para que quede separado el borde
+                  del formulario que sigue a continuación*/
+}
+.img-tabla {
+width: 100%;
+display:inline-block;
+height:620px;
+overflow: hidden;
+}
+
